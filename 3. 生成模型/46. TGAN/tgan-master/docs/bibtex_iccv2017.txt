@@ -1,0 +1,6 @@
+@inproceedings{TGAN2017,
+    author = {Saito, Masaki and Matsumoto, Eiichi and Saito, Shunta},
+    title = {Temporal Generative Adversarial Nets with Singular Value Clipping},
+    booktitle = {ICCV},
+    year = {2017},
+}
