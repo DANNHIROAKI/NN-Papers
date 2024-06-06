@@ -1,0 +1,6 @@
+_BASE_: Base.yaml
+MODEL:
+  WEIGHTS: 'pretrained/univs/univs_R50.pth'
+DATASETS:
+  TEST: ("vipseg_panoptic_val", )
+OUTPUT_DIR: output/inf/r50_c1+univs/stage3/vps_entity_val/
