@@ -1,0 +1,7 @@
+*.pkl
+*.h5
+__pycache__
+*.avi
+*.mp4
+*.dat
+*.jpg
