@@ -1,0 +1,19 @@
+# training on new model, rate, and data
+pretrained: True
+freeze: em
+lmb:
+  - 32 # lower bound
+  - 4096 # upper bound
+trainset: coco_train2017
+batch_size: 16
+
+# knowledge replay
+replay_lmb:
+  - 32 # lower bound
+  - 1024 # upper bound
+replay_trainset: coco_train2017
+replay_batch_size: 16
+
+# evaluation
+valset: kodak
+val_batch_size: 1

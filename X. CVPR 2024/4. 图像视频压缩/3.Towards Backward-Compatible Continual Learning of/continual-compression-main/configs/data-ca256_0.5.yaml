@@ -1,0 +1,23 @@
+# training on new model, rate, and data
+pretrained: True
+freeze: em
+lmb:
+  - 32 # lower bound
+  - 1024 # upper bound
+pt_lmb: # pre-trained model's lmb range
+  - 32 # lower bound
+  - 1024 # upper bound
+trainset: celeba_hq256train
+batch_size: 16
+
+# knowledge replay
+replay_lmb:
+  - 32 # lower bound
+  - 1024 # upper bound
+replay_trainset: coco_train2017
+replay_batch_size: 16
+
+# evaluation
+valset: celeba_hq256val
+val_batch_size: 32
+model_val_interval: 5_000

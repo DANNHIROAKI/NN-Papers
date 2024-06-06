@@ -1,0 +1,8 @@
+*.pyc
+.vscode/
+*.bin
+*.png
+*.so
+build/
+*.tar
+*.pyd
