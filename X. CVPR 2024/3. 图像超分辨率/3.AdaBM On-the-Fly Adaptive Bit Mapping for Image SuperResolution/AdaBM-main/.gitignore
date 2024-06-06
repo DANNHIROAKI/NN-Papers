@@ -1,0 +1,10 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyc
+
+/.vscode
+
+src/run_exp.sh
+experiment/
+pretrained_model/

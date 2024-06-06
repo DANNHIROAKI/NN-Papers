@@ -1,0 +1,13 @@
+# large memory files
+experiments
+tb_loggers
+datasets
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.swp
+
+# files for experiments
+scripts
+rm_archives.sh
