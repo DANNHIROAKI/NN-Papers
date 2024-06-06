@@ -1,0 +1,12 @@
+name: gluon_cv_py3_mxnet
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - nose
+  - coverage=4.5.4
+  - pip:
+    - mxnet
+    - coverage-badge
+    - nose-timer

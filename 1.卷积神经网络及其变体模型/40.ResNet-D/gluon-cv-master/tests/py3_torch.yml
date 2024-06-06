@@ -1,0 +1,31 @@
+name: gluon_cv_py3_pytorch
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.6
+  - perl
+  - sphinx=1.7.2
+  - nose
+  - coverage=4.5.4
+  - scipy
+  - cython
+  - pip=20.2.4
+  - requests
+  - matplotlib
+  - tqdm
+  - pillow
+  - pytorch=1.6.0
+  - torchvision=0.7.0
+  - pip:
+    - coverage-badge
+    - awscli
+    - nose-timer
+    - opencv-python
+    - git+https://github.com/zhanghang1989/detail-api.git#subdirectory=PythonAPI
+    - portalocker
+    - tensorboardx
+    - decord
+    - opencv-python-headless
+    - yacs
