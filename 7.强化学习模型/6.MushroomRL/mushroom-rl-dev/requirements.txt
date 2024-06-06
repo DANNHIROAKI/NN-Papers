@@ -1,0 +1,10 @@
+numpy
+scipy
+scikit-learn
+matplotlib
+joblib
+tqdm
+pygame
+opencv-python>=4.7
+torch
+pytest
