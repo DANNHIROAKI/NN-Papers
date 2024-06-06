@@ -1,0 +1,36 @@
+Running on device: GeForce GTX TITAN X
+Using NVIDIA Corporation , OpenCL platform: NVIDIA CUDA
+Using OpenCL device: GeForce GTX TITAN X
+ModelType: OverFeat[fast]	Kernels: clnn	Input shape: 128x3x231x231
+clnn                                    :updateOutput():    1180.92
+clnn                                 :updateGradInput():     354.65
+clnn                               :accGradParameters():    1725.63
+clnn                                           :Forward:    1180.92
+clnn                                          :Backward:    2080.28
+clnn                                             :TOTAL:    3261.19
+
+ModelType: AlexNet	Kernels: clnn	Input shape: 128x3x224x224
+clnn                                    :updateOutput():     388.69
+clnn                                 :updateGradInput():     204.12
+clnn                               :accGradParameters():     370.30
+clnn                                           :Forward:     388.69
+clnn                                          :Backward:     574.42
+clnn                                             :TOTAL:     963.11
+
+ModelType: VGG Model-A	Kernels: clnn	Input shape: 64x3x224x224
+clnn                                    :updateOutput():     875.65
+clnn                                 :updateGradInput():     479.20
+clnn                               :accGradParameters():    2083.00
+clnn                                           :Forward:     875.65
+clnn                                          :Backward:    2562.20
+clnn                                             :TOTAL:    3437.85
+
+ModelType: GoogleNet	Kernels: clnn	Input shape: 128x3x224x224
+clnn                                    :updateOutput():    3027.72
+clnn                                 :updateGradInput():    1554.68
+clnn                               :accGradParameters():    2433.74
+clnn                                           :Forward:    3027.72
+clnn                                          :Backward:    3988.43
+clnn                                             :TOTAL:    7016.15
+
+

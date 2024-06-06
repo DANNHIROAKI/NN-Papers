@@ -1,0 +1,36 @@
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcurand.so locally
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:102] Found device 0 with properties: 
+name: GeForce GTX TITAN X
+major: 5 minor: 2 memoryClockRate (GHz) 1.076
+pciBusID 0000:06:00.0
+Total memory: 12.00GiB
+Free memory: 11.87GiB
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:126] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:136] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:755] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:06:00.0)
+I tensorflow/core/common_runtime/gpu/pool_allocator.cc:244] PoolAllocator: After 1968 get requests, put_count=1888 evicted_count=1000 eviction_rate=0.529661 and unsatisfied allocation rate=0.599593
+I tensorflow/core/common_runtime/gpu/pool_allocator.cc:256] Raising pool_size_limit_ from 100 to 110
+2016-04-25 13:49:16.617654: step 10, duration = 0.136
+2016-04-25 13:49:17.979970: step 20, duration = 0.137
+2016-04-25 13:49:19.343556: step 30, duration = 0.136
+2016-04-25 13:49:20.707242: step 40, duration = 0.136
+2016-04-25 13:49:22.072121: step 50, duration = 0.136
+2016-04-25 13:49:23.435953: step 60, duration = 0.136
+2016-04-25 13:49:24.798779: step 70, duration = 0.136
+2016-04-25 13:49:26.162925: step 80, duration = 0.136
+2016-04-25 13:49:27.527266: step 90, duration = 0.136
+2016-04-25 13:49:28.755830: Forward across 100 steps, 0.135 +/- 0.014 sec / batch
+2016-04-25 13:49:38.388811: step 10, duration = 0.450
+2016-04-25 13:49:42.876702: step 20, duration = 0.450
+2016-04-25 13:49:47.370660: step 30, duration = 0.451
+2016-04-25 13:49:51.866057: step 40, duration = 0.448
+2016-04-25 13:49:56.356868: step 50, duration = 0.447
+2016-04-25 13:50:00.850748: step 60, duration = 0.447
+2016-04-25 13:50:05.339067: step 70, duration = 0.450
+2016-04-25 13:50:09.834336: step 80, duration = 0.448
+2016-04-25 13:50:14.328572: step 90, duration = 0.447
+2016-04-25 13:50:18.378832: Forward-backward across 100 steps, 0.445 +/- 0.045 sec / batch

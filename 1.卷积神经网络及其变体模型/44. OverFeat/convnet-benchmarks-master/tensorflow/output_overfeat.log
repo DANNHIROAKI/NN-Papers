@@ -1,0 +1,34 @@
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcurand.so locally
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:102] Found device 0 with properties: 
+name: GeForce GTX TITAN X
+major: 5 minor: 2 memoryClockRate (GHz) 1.076
+pciBusID 0000:06:00.0
+Total memory: 12.00GiB
+Free memory: 11.87GiB
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:126] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:136] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:755] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:06:00.0)
+2016-04-25 13:47:13.718646: step 10, duration = 0.090
+2016-04-25 13:47:14.631825: step 20, duration = 0.091
+2016-04-25 13:47:15.541794: step 30, duration = 0.090
+2016-04-25 13:47:16.452997: step 40, duration = 0.091
+2016-04-25 13:47:17.364615: step 50, duration = 0.091
+2016-04-25 13:47:18.275613: step 60, duration = 0.092
+2016-04-25 13:47:19.185519: step 70, duration = 0.092
+2016-04-25 13:47:20.099216: step 80, duration = 0.092
+2016-04-25 13:47:21.010124: step 90, duration = 0.091
+2016-04-25 13:47:21.834772: Forward across 100 steps, 0.090 +/- 0.009 sec / batch
+2016-04-25 13:47:27.718206: step 10, duration = 0.278
+2016-04-25 13:47:30.516497: step 20, duration = 0.281
+2016-04-25 13:47:33.318644: step 30, duration = 0.279
+2016-04-25 13:47:36.132312: step 40, duration = 0.281
+2016-04-25 13:47:38.941096: step 50, duration = 0.281
+2016-04-25 13:47:41.762675: step 60, duration = 0.282
+2016-04-25 13:47:44.588236: step 70, duration = 0.283
+2016-04-25 13:47:47.419856: step 80, duration = 0.285
+2016-04-25 13:47:50.257761: step 90, duration = 0.283
+2016-04-25 13:47:52.818085: Forward-backward across 100 steps, 0.279 +/- 0.028 sec / batch
