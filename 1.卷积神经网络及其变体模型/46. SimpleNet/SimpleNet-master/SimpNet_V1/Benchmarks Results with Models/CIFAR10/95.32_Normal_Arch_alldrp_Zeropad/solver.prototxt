@@ -1,0 +1,22 @@
+net: "examples/cifar10/train_val.prototxt"
+test_iter: 100
+test_interval: 500
+base_lr: 0.1
+momentum: 0.9
+weight_decay:  0.005 
+type:"AdaDelta"
+delta:1e-3
+gamma: 0.1	
+lr_policy: "multistep"
+stepvalue: 50000
+stepvalue: 95000
+stepvalue: 253000
+stepvalue: 295000
+stepvalue: 320000
+stepvalue: 370000
+display: 100
+max_iter: 400000 
+snapshot: 5000
+snapshot_prefix: "examples/cifar10/cifar10_SimpleNet_ZP"
+solver_mode: GPU
+random_seed: 1705
