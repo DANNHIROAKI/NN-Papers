@@ -1,0 +1,4 @@
+# LOGAN
+The unofficial implementation of LOGAN: Latent Optimisation for Generative Adversarial Networks (https://arxiv.org/abs/1912.00953)
+## Abstract:
+Training generative adversarial networks requires balancing of delicate adversarial dynamics. Even with careful tuning, training may diverge or end up in a bad equilibrium with dropped modes. In this work, we improve CS-GAN with natural gradient-based latent optimisation and show that it improves adversarial dynamics by enhancing interactions between the discriminator and the generator. Our experiments demonstrate that latent optimisation can significantly improve GAN training, obtaining state-of-the-art performance for the ImageNet (128×128) dataset. Our model achieves an Inception Score (IS) of 148 and an Fréchet Inception Distance (FID) of 3.4, an improvement of 17% and 32% in IS and FID respectively, compared with the baseline BigGAN-deep model with the same architecture and number of parameters.
