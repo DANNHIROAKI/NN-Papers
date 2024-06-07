@@ -1,0 +1,12 @@
+numpy
+scipy
+pandas
+scikit-learn
+torch
+torchvision
+requests
+biopandas
+biopython
+setuptools
+matplotlib
+tqdm
