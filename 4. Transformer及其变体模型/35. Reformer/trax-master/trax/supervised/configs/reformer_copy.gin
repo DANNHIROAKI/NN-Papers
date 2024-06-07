@@ -1,0 +1,109 @@
+# Copyright 2023 The Trax Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import trax.data
+import trax.models
+import trax.optimizers
+import trax.supervised.trainer_lib
+
+vocab_size = 13  #  For addition, base = vocab_size - 3.
+max_len = 32
+twice_max_len = 64
+
+# Parameters for data_streams:
+# ==============================================================================
+data_streams.data_dir = None
+data_streams.dataset_name = 'copy'
+
+# Parameters for sequence_copy_inputs:
+# ==============================================================================
+sequence_copy_inputs.vocab_size = %vocab_size
+sequence_copy_inputs.batch_size = 128
+sequence_copy_inputs.train_length = 64
+sequence_copy_inputs.eval_min_length = 4
+sequence_copy_inputs.eval_max_length = 64
+sequence_copy_inputs.reverse = False
+sequence_copy_inputs.pad_to_multiple = %max_len
+
+# Parameters for simple_sequence_copy_inputs:
+# ==============================================================================
+simple_sequence_copy_inputs.vocab_size = %vocab_size
+simple_sequence_copy_inputs.batch_size = 128
+simple_sequence_copy_inputs.train_length = %max_len
+simple_sequence_copy_inputs.eval_min_length = 4
+simple_sequence_copy_inputs.eval_max_length = %max_len
+simple_sequence_copy_inputs.pad_to_multiple = %max_len
+
+# Parameters for addition_inputs:
+# ==============================================================================
+addition_inputs.vocab_size = %vocab_size
+addition_inputs.batch_size = 128
+addition_inputs.train_length = 64
+addition_inputs.eval_min_length = 32
+addition_inputs.eval_max_length = 64
+addition_inputs.pad_to_multiple = 32
+
+# Parameters for multifactor:
+# ==============================================================================
+multifactor.constant = 0.05
+multifactor.factors = 'constant * linear_warmup * rsqrt_decay'
+multifactor.warmup_steps = 4000
+
+# Parameters for LSHSelfAttention:
+# ==============================================================================
+LSHSelfAttention.attention_dropout = 0.0
+LSHSelfAttention.chunk_len = 16
+LSHSelfAttention.n_buckets = [32, 32]
+LSHSelfAttention.n_chunks_after = 0
+LSHSelfAttention.n_chunks_before = 1
+LSHSelfAttention.n_hashes = 2
+LSHSelfAttention.n_parallel_heads = 1
+LSHSelfAttention.max_length_for_buckets = 1024
+# 0 < predict_drop_len <= predict_mem_len
+LSHSelfAttention.predict_mem_len = %max_len
+LSHSelfAttention.predict_drop_len = %max_len
+
+# Parameters for ReformerLM:
+# ==============================================================================
+ReformerLM.d_model = 256
+ReformerLM.d_ff = 512
+ReformerLM.dropout = 0.05
+ReformerLM.max_len = %twice_max_len
+ReformerLM.n_heads = 4
+ReformerLM.n_layers = 3
+ReformerLM.ff_use_sru = 0
+ReformerLM.pos_type = 'fixed-base'
+ReformerLM.attention_type = @LSHSelfAttention  # @CausalFavor
+ReformerLM.vocab_size = %vocab_size
+
+# Parameters for TransformerLM:
+# ==============================================================================
+TransformerLM.d_model = 256
+TransformerLM.d_ff = 512
+TransformerLM.dropout = 0.05
+TransformerLM.max_len = %max_len
+TransformerLM.n_heads = 4
+TransformerLM.n_layers = 3
+TransformerLM.vocab_size = %vocab_size
+
+# Parameters for train:
+# ==============================================================================
+train.inputs = @trax.data.sequence_copy_inputs
+# train.inputs = @trax.data.addition_inputs
+train.eval_frequency = 100
+train.eval_steps = 10
+train.optimizer = @trax.optimizers.Adam
+train.steps = 100000
+# train.model = @trax.models.TransformerLM
+train.model = @trax.models.ReformerLM

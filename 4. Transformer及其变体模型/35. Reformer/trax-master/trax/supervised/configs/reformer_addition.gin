@@ -1,0 +1,154 @@
+# Copyright 2023 The Trax Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import trax.data
+import trax.models
+import trax.optimizers
+import trax.supervised.trainer_lib
+
+vocab_size = 13  #  For addition, base = vocab_size - 3.
+
+# Parameters for data_streams:
+# ==============================================================================
+data_streams.data_dir = None
+data_streams.dataset_name = 'addition'
+
+# Parameters for sequence_copy_inputs:
+# ==============================================================================
+sequence_copy_inputs.vocab_size = %vocab_size
+sequence_copy_inputs.batch_size = 128
+sequence_copy_inputs.train_length = 64
+sequence_copy_inputs.eval_min_length = 128
+sequence_copy_inputs.eval_max_length = 160
+sequence_copy_inputs.reverse = False
+sequence_copy_inputs.pad_to_multiple = 32
+
+# Parameters for addition_inputs:
+# ==============================================================================
+addition_inputs.vocab_size = %vocab_size
+addition_inputs.batch_size = 128  # lower to e.g. 2 to test MixedLSHAttention
+addition_inputs.train_length = 129
+addition_inputs.eval_min_length = 257
+addition_inputs.eval_max_length = 301
+addition_inputs.pad_to_multiple = 32
+addition_inputs.encdec = False  # True
+
+# Parameters for multifactor:
+# ==============================================================================
+multifactor.constant = 0.5
+multifactor.factors = 'constant * linear_warmup * rsqrt_decay'
+multifactor.warmup_steps = 16000
+
+# Parameters for Adam:
+# ==============================================================================
+Adam.weight_decay_rate = 0.0
+Adam.b1 = 0.9
+Adam.b2 = 0.98
+Adam.eps = 2e-5
+
+# Parameters for Adafactor:
+# ==============================================================================
+Adafactor.weight_decay_rate = 0.0
+
+# Parameters for LSHSelfAttention:
+# ==============================================================================
+LSHSelfAttention.attention_dropout = 0.0
+LSHSelfAttention.chunk_len = 16
+LSHSelfAttention.n_chunks_after = 0
+LSHSelfAttention.n_chunks_before = 1
+LSHSelfAttention.n_hashes = 2
+LSHSelfAttention.n_parallel_heads = 1
+LSHSelfAttention.max_length_for_buckets = 1024
+
+# Parameters for MixedLSHSelfAttention:
+# ==============================================================================
+MixedLSHSelfAttention.attention_dropout = 0.2
+MixedLSHSelfAttention.chunk_len = 32
+MixedLSHSelfAttention.n_buckets = None
+MixedLSHSelfAttention.n_chunks_after = 0
+MixedLSHSelfAttention.n_chunks_before = 1
+MixedLSHSelfAttention.n_hashes = 2
+MixedLSHSelfAttention.n_parallel_heads = 1
+MixedLSHSelfAttention.predict_drop_len = 1024
+MixedLSHSelfAttention.predict_mem_len = 1024
+MixedLSHSelfAttention.std_length = None  # 128
+MixedLSHSelfAttention.max_length_for_buckets = 1024
+encoder/MixedLSHSelfAttention.n_chunks_after = 1
+
+# Parameters for PureLSHSelfAttentionWrapper:
+# ==============================================================================
+PureLSHSelfAttentionWrapper.pure_lsh_implementation = @MixedLSHSelfAttention
+PureLSHSelfAttentionWrapper.weights_format = 'sparse'
+PureLSHSelfAttentionWrapper.num_weights = 2
+encoder/PureLSHSelfAttentionWrapper.pure_lsh_implementation = @encoder/MixedLSHSelfAttention
+
+# Parameters for ReformerLM:
+# ==============================================================================
+ReformerLM.d_model = 256
+ReformerLM.d_ff = 512
+ReformerLM.dropout = 0.2
+ReformerLM.max_len = 2048
+ReformerLM.n_heads = 4
+ReformerLM.n_layers = 4
+ReformerLM.ff_use_sru = 1
+ReformerLM.attention_type = @CausalAttention  # @LSHSelfAttention
+ReformerLM.vocab_size = %vocab_size
+ReformerLM.pos_type = 'fixed-base'
+# ReformerLM.pos_type = None
+# ReformerLM.pos_start_from_zero_prob = 0.5
+# ReformerLM.pos_max_offset_to_add = 300
+
+# Parameters for ConfigurableTransformerLM:
+# ==============================================================================
+ConfigurableTransformerLM.d_model = 256
+ConfigurableTransformerLM.d_ff = 512
+ConfigurableTransformerLM.dropout = 0.2
+ConfigurableTransformerLM.max_len = 2048
+ConfigurableTransformerLM.n_heads = 4
+ConfigurableTransformerLM.n_layers = 4
+ConfigurableTransformerLM.ff_use_sru = 1
+ConfigurableTransformerLM.attention_type = @CausalAttention
+ConfigurableTransformerLM.vocab_size = %vocab_size
+ConfigurableTransformerLM.pos_type = None
+ConfigurableTransformerLM.pos_start_from_zero_prob = 0.05
+ConfigurableTransformerLM.pos_max_offset_to_add = 300
+
+# Parameters for ConfigurableTerraformer:
+# ==============================================================================
+ConfigurableTerraformer.d_model = 256
+ConfigurableTerraformer.d_ff = 512
+ConfigurableTerraformer.dropout = 0.3
+ConfigurableTerraformer.max_len = 2048
+ConfigurableTerraformer.n_heads = 4
+ConfigurableTerraformer.n_encoder_layers = 12
+ConfigurableTerraformer.n_decoder_layers = 4
+ConfigurableTerraformer.ff_use_sru = 1
+ConfigurableTerraformer.encoder_attention_type = @Attention
+ConfigurableTerraformer.encoder_decoder_attention_type = @CausalAttention
+# ConfigurableTerraformer.encoder_attention_type = @encoder/PureLSHSelfAttentionWrapper
+# ConfigurableTerraformer.encoder_decoder_attention_type = @PureLSHSelfAttentionWrapper
+ConfigurableTerraformer.input_vocab_size = %vocab_size
+ConfigurableTerraformer.pos_type = None
+ConfigurableTerraformer.pos_start_from_zero_prob = 0.95
+ConfigurableTerraformer.pos_max_offset_to_add = 300
+
+# Parameters for train:
+# ==============================================================================
+# train.inputs = @trax.data.sequence_copy_inputs
+train.inputs = @trax.data.addition_inputs
+train.eval_frequency = 1000
+train.eval_steps = 50
+train.optimizer = @trax.optimizers.Adam
+train.steps = 300000
+train.model = @trax.models.ConfigurableTransformerLM

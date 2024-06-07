@@ -1,0 +1,85 @@
+# Copyright 2023 The Trax Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import trax.data
+import trax.layers
+import trax.models
+import trax.optimizers
+import trax.supervised.trainer_lib
+
+vocab_size = 5  #  For arithmetic operations, base = vocab_size - 3.
+batch_size = 128
+
+Adam = @trax.optimizers.Adam
+Adafactor = @trax.optimizers.Adafactor
+
+# Parameters for addition_inputs:
+# ==============================================================================
+addition_inputs.vocab_size = %vocab_size
+addition_inputs.batch_size = %batch_size
+addition_inputs.train_length = 64
+addition_inputs.eval_min_length = 128
+addition_inputs.eval_max_length = 128
+addition_inputs.pad_to_multiple = 64
+addition_inputs.encdec = True
+
+trax.supervised.training.EvalTask.export_prefix = 'len128'
+
+# Parameters for eval_len256/addition_inputs_stream:
+# ==============================================================================
+eval_len256/addition_input_stream.vocab_size = %vocab_size
+eval_len256/addition_input_stream.batch_size = %batch_size
+eval_len256/addition_input_stream.min_length = 256
+eval_len256/addition_input_stream.max_length = 256
+eval_len256/addition_input_stream.pad_to_multiple = 128
+eval_len256/addition_input_stream.encdec = True
+
+eval_len256/named_stream.name = 'len256'
+eval_len256/named_stream.stream = @eval_len256/addition_input_stream()
+
+# Parameters for multifactor:
+# ==============================================================================
+multifactor.constant = 0.1
+multifactor.factors = 'constant * linear_warmup * rsqrt_decay'
+multifactor.warmup_steps = 4000
+
+# Parameters for Adafactor:
+# ==============================================================================
+# Adafactor.do_momentum = True
+
+# Parameters for RSE:
+# ==============================================================================
+ResidualShuffleExchange.vocab_size = %vocab_size
+ResidualShuffleExchange.d_model = 192
+ResidualShuffleExchange.dropout = 0.1
+ResidualShuffleExchange.input_dropout = 0.05
+ResidualShuffleExchange.mode = 'train'
+ResidualShuffleExchange.n_blocks = 2
+
+# Parameters for loss:
+# ==============================================================================
+WeightedCategoryCrossEntropy.label_smoothing = 0.01
+
+# Parameters for train:
+# ==============================================================================
+train.inputs = @trax.data.addition_inputs
+train.eval_frequency = 1000
+train.eval_steps = 50
+train.optimizer = %Adam
+train.loss_fn = @trax.layers.WeightedCategoryCrossEntropy()
+train.steps = 100000
+train.model = @trax.models.ResidualShuffleExchange
+train.checkpoint_highest = 'sequence_accuracy'
+train.additional_eval_streams = [
+    @eval_len256/trax.supervised.trainer_lib.named_stream(),]
