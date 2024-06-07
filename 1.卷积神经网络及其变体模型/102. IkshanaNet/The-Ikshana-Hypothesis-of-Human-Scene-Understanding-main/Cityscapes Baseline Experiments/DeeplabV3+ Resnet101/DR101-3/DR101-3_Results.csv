@@ -1,0 +1,13 @@
+
+Challenge,Method
+pixellevel,"deeplab v3 plus sgd"
+
+"Class level"
+Metric,Average,road,sidewalk,building,wall,fence,pole,trafficlight,trafficsign,vegetation,terrain,sky,person,rider,car,truck,bus,train,motorcycle,bicycle
+IoU,31.0241,91.1673,47.771,74.4417,10.0591,3.18637,3.82584,0,13.8607,82.0498,55.1561,85.4527,30.0489,0,73.4986,0,0,0,0,18.9404
+iIoU,12.0261,,,,,,,,,,,,20.032,0,64.9856,0,0,0,0,11.1914
+
+"Category level"
+Metric,Average,flat,nature,object,sky,construction,human,vehicle
+IoU,63.5393,93.5119,81.4712,7.78223,85.4527,73.6194,32.6258,70.3122
+iIoU,42.1108,,,,,,21.593,62.6286

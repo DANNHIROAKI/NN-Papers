@@ -1,0 +1,13 @@
+
+Challenge,Method
+pixellevel,DD161-3
+
+"Class level"
+Metric,Average,road,sidewalk,building,wall,fence,pole,trafficlight,trafficsign,vegetation,terrain,sky,person,rider,car,truck,bus,train,motorcycle,bicycle
+IoU,32.0074,91.8646,52.3328,75.7405,13.9889,4.95556,3.32658,1.82707,14.1045,80.7237,50.8117,83.2934,31.8441,0,74.9397,1.18428,0.696198,2.26596,2.73147,21.5102
+iIoU,11.8337,,,,,,,,,,,,17.051,0,63.8655,0.335465,0.493301,0.915552,0.906857,11.1021
+
+"Category level"
+Metric,Average,flat,nature,object,sky,construction,human,vehicle
+IoU,63.78,93.2274,80.0291,7.13677,83.2934,75.4265,34.599,72.7477
+iIoU,40.1361,,,,,,18.3807,61.8915

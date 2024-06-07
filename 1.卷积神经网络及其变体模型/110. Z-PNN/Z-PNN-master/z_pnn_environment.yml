@@ -1,0 +1,18 @@
+name: z_pnn_env
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - torchvision
+  - scikit-image
+  - scipy
+  - torchaudio
+  - cudatoolkit=11.3
+  - scikit-learn
+  - matplotlib
+  - numpy
+  - pytorch
+  - tqdm
+  - gdal
+prefix: /home/matteo/anaconda3/envs/z_pnn_env
