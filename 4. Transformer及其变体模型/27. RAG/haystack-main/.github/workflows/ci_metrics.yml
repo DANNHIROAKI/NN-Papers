@@ -1,0 +1,26 @@
+name: CI Metrics
+
+on:
+  workflow_run:
+    workflows:
+      - "end-to-end"
+      - "end-to-end (Preview)"
+      - "Linting"
+      - "Tests"
+      - "Tests (Preview)"
+      - "REST API Tests"
+    types:
+      - completed
+  pull_request:
+    types:
+      - opened
+      - closed
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: int128/datadog-actions-metrics@v1
+        with:
+          datadog-api-key: ${{ secrets.DATADOG_API_KEY }}
+          datadog-site: "datadoghq.eu"
+          collect-job-metrics: true

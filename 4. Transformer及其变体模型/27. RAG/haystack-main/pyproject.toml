@@ -1,0 +1,442 @@
+[build-system]
+requires = [
+  "hatchling>=1.8.0",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "farm-haystack"
+dynamic = [
+  "version",
+]
+description = "LLM framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.8"
+authors = [
+  { name = "deepset.ai", email = "malte.pietsch@deepset.ai" },
+]
+keywords = [
+  "BERT",
+  "QA",
+  "Question-Answering",
+  "Reader",
+  "Retriever",
+  "albert",
+  "language-model",
+  "mrc",
+  "roberta",
+  "search",
+  "semantic-search",
+  "squad",
+  "transfer-learning",
+  "transformer",
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "License :: Freely Distributable",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "requests",
+  "httpx",
+  "pydantic<2",
+  "transformers==4.34.1",
+  "pandas",
+  "rank_bm25",
+  "scikit-learn>=1.3.0", # TF-IDF and metrics
+  "lazy-imports==0.3.1", # Optional imports
+  "prompthub-py==4.0.0",
+  "platformdirs",
+
+  # Utils
+  "tqdm",  # progress bars in model download and training scripts
+  "networkx",  # graphs library
+  "quantulum3",  # quantities extraction from text
+  "posthog",  # telemetry
+  "tenacity",  # retry decorator
+  "sseclient-py",  # server side events for OpenAI streaming
+  "more_itertools",  # utilities
+
+  # Web Retriever
+  "boilerpy3",
+
+  # Multimodal Embedder haystack/nodes/retriever/multimodal/embedder.py
+  "Pillow",
+
+  # OpenAI tokenizer
+  "tiktoken>=0.5.1",
+
+  # Schema validation
+  "jsonschema",
+
+  # Agent events
+  "events",
+
+  "requests-cache<1.0.0",
+]
+
+[project.optional-dependencies]
+preview = [
+  "canals==0.9.0",
+  "requests",
+  "pandas",
+  "rank_bm25",
+  "tqdm",
+  "tenacity",
+  "lazy-imports",
+  "posthog",  # telemetry
+
+  "Jinja2",
+  "openai<1.0.0",
+  "pyyaml",
+  "more-itertools",  # DocumentSplitter
+]
+inference = [
+  "transformers[torch,sentencepiece]==4.34.1",
+  "sentence-transformers>=2.2.0",  # See haystack/nodes/retriever/_embedding_encoder.py, _SentenceTransformersEmbeddingEncoder
+  "huggingface-hub>=0.5.0",
+]
+elasticsearch = [
+  "farm-haystack[elasticsearch7]",
+]
+elasticsearch7 = [
+  "elasticsearch>=7.17,<8",
+  "elastic_transport<8"
+]
+elasticsearch8 = [
+  "elasticsearch>=8,<9",
+  "elastic_transport>=8,<9"
+]
+sql = [
+  "sqlalchemy>=1.4.2,<2",
+  "sqlalchemy_utils",
+  "psycopg2-binary; platform_system != 'Windows'",
+]
+only-faiss = [
+  "faiss-cpu>=1.6.3,<=1.7.2",
+]
+faiss = [
+  "farm-haystack[sql,only-faiss]",
+]
+only-faiss-gpu = [
+  "faiss-gpu>=1.6.3,<2",
+]
+faiss-gpu = [
+  "farm-haystack[sql,only-faiss-gpu]",
+]
+weaviate = [
+  "weaviate-client>2",
+]
+only-pinecone = [
+  "pinecone-client>=2.0.11,<3",
+]
+pinecone = [
+  "farm-haystack[sql,only-pinecone]",
+]
+opensearch = [
+  "opensearch-py>=2",
+]
+docstores = [
+  "farm-haystack[elasticsearch,faiss,weaviate,pinecone,opensearch]",
+]
+docstores-gpu = [
+  "farm-haystack[elasticsearch,faiss-gpu,weaviate,pinecone,opensearch]",
+]
+aws = [
+  "boto3",
+  # Costraint botocore to avoid taking to much time to resolve the dependency tree.
+  # boto3 used to constraint it at this version more than a year ago. To avoid breaking
+  # people using old versions we use a similar constraint without upper bound.
+  # https://github.com/boto/boto3/blob/dae73bef223abbedfa7317a783070831febc0c90/setup.py#L16
+  "botocore>=1.27",
+]
+crawler = [
+  "selenium>=4.11.0"
+]
+preprocessing = [
+  "nltk",
+  "langdetect",  # for language classification
+]
+file-conversion = [
+  "azure-ai-formrecognizer>=3.2.0b2",  # Microsoft Azure's Form Recognizer service (text and table exctrator)
+  "python-docx",
+  "tika",  # Apache Tika (text & metadata extractor)
+  "beautifulsoup4",
+  "markdown",
+  "python-frontmatter",
+  "python-magic; platform_system != 'Windows'",  # Depends on libmagic: https://pypi.org/project/python-magic/
+  "python-magic-bin; platform_system == 'Windows'",  # Needs to be installed without python-magic, otherwise Windows CI gets stuck.
+]
+pdf = [
+  "PyMuPDF>=1.18.16" ,  # PDF text extraction alternative to xpdf; please check AGPLv3 license
+]
+ocr = [
+  "pytesseract>0.3.7",
+  "pdf2image>1.14",
+]
+onnx = [
+  "onnxruntime",
+  "onnxruntime_tools",
+]
+onnx-gpu = [
+  "onnxruntime-gpu",
+  "onnxruntime_tools",
+]
+metrics = [  # for metrics
+  "scipy>=1.3.2",
+  "rapidfuzz>=2.0.15,<2.8.0",   # FIXME https://github.com/deepset-ai/haystack/pull/3199
+  "seqeval",
+  "mlflow",
+]
+ray = [
+  "ray[serve]>=1.9.1,<2; platform_system != 'Windows'",
+  "ray[serve]>=1.9.1,<2,!=1.12.0; platform_system == 'Windows'",  # Avoid 1.12.0 due to https://github.com/ray-project/ray/issues/24169 (fails on windows)
+  "aiorwlock>=1.3.0,<2",
+]
+colab = [
+  "pillow<=9.0.0",
+]
+dev = [
+  "pre-commit",
+  # Type check
+  "mypy",
+  # Test
+  "pytest",
+  "pytest-cov",
+  "pytest-custom_exit_code",  # used in the CI
+  "pytest-asyncio",
+  "responses",
+  "tox",
+  "coverage",
+  "python-multipart",
+  "psutil",
+  # Linting
+  "pylint",
+  "farm-haystack[formatting]",
+  # Documentation
+  "pydoc-markdown",
+  "toml",
+  "reno",
+  # dulwich is a reno dependency, they pin it at >=0.15.0 so pip takes ton of time to resolve the dependency tree.
+  # We pin it here to avoid taking too much time.
+  # https://opendev.org/openstack/reno/src/branch/master/requirements.txt#L7
+  "dulwich>=0.21.0,<1.0.0",
+]
+
+formatting = [
+  # Version specified following Black stability policy:
+  # https://black.readthedocs.io/en/stable/the_black_code_style/index.html#stability-policy
+  "black[jupyter]~=23.0",
+]
+
+all = [
+  "farm-haystack[inference,docstores,crawler,preprocessing,file-conversion,pdf,ocr,metrics,aws,preview]",
+]
+all-gpu = [
+  # beir is incompatible with faiss-gpu: https://github.com/beir-cellar/beir/issues/71
+  "farm-haystack[inference,docstores-gpu,crawler,preprocessing,file-conversion,pdf,ocr,metrics,aws,preview]",
+]
+
+[project.scripts]
+haystack = "haystack.cli.entry_point:main"
+
+[project.urls]
+"CI: GitHub" = "https://github.com/deepset-ai/haystack/actions"
+"Docs: RTD" = "https://haystack.deepset.ai/overview/intro"
+"GitHub: issues" = "https://github.com/deepset-ai/haystack/issues"
+"GitHub: repo" = "https://github.com/deepset-ai/haystack"
+Homepage = "https://github.com/deepset-ai/haystack"
+
+[tool.hatch.version]
+path = "VERSION.txt"
+pattern = "(?P<version>.+)"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/haystack",
+  "/VERSION.txt",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+  "haystack",
+]
+
+[tool.black]
+line-length = 120
+skip_magic_trailing_comma = true  # For compatibility with pydoc>=4.6, check if still needed.
+
+[tool.codespell]
+ignore-words-list = "ans,astroid,nd,ned,nin,ue,rouge"
+quiet-level = 3
+skip = "test/nodes/*,test/others/*,test/samples/*"
+
+[tool.pylint.'MESSAGES CONTROL']
+max-line-length=120
+load-plugins = "haystack_linter"
+disable = [
+
+  # To keep
+  "fixme",
+  "c-extension-no-member",
+
+  # To review:
+  "missing-docstring",
+  "unused-argument",
+  "no-member",
+  "line-too-long",
+  "protected-access",
+  "too-few-public-methods",
+  "raise-missing-from",
+  "invalid-name",
+  "duplicate-code",
+  "arguments-differ",
+  "consider-using-f-string",
+  "no-else-return",
+  "attribute-defined-outside-init",
+  "super-with-arguments",
+  "redefined-builtin",
+  "abstract-method",
+  "unspecified-encoding",
+  "unidiomatic-typecheck",
+  "no-name-in-module",
+  "consider-using-with",
+  "redefined-outer-name",
+  "arguments-renamed",
+  "unnecessary-pass",
+  "broad-except",
+  "unnecessary-comprehension",
+  "subprocess-run-check",
+  "singleton-comparison",
+  "consider-iterating-dictionary",
+  "undefined-loop-variable",
+  "consider-using-in",
+  "bare-except",
+  "unexpected-keyword-arg",
+  "simplifiable-if-expression",
+  "use-list-literal",
+  "broad-exception-raised",
+
+  # To review later
+  "cyclic-import",
+  "import-outside-toplevel",
+  "deprecated-method",
+]
+[tool.pylint.'DESIGN']
+max-args = 38  # Default is 5
+max-attributes = 28  # Default is 7
+max-branches = 34  # Default is 12
+max-locals = 45  # Default is 15
+max-module-lines = 2468  # Default is 1000
+max-nested-blocks = 9  # Default is 5
+max-statements = 206  # Default is 50
+[tool.pylint.'SIMILARITIES']
+min-similarity-lines=6
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--strict-markers"
+markers = [
+  "unit: unit tests",
+  "integration: integration tests",
+
+  "generator: generator tests",
+  "summarizer: summarizer tests",
+  "embedding_dim: uses a document store with non-default embedding dimension (e.g @pytest.mark.embedding_dim(128))",
+
+  "tika: requires Tika container",
+  "parsr: requires Parsr container",
+  "ocr: requires Tesseract",
+
+  "elasticsearch: requires Elasticsearch container",
+  "weaviate: requires Weaviate container",
+  "pinecone: requires Pinecone credentials",
+  "faiss: uses FAISS",
+  "opensearch",
+  "document_store",
+]
+log_cli = true
+
+[tool.mypy]
+warn_return_any = false
+warn_unused_configs = true
+ignore_missing_imports = true
+plugins = [
+  "pydantic.mypy",
+]
+
+[tool.ruff]
+select = [
+  "AIR",    # Airflow
+  "ASYNC",  # flake8-async
+  "C4",     # flake8-comprehensions
+  "C90",    # McCabe cyclomatic complexity
+  "CPY",    # flake8-copyright
+  "DJ",     # flake8-django
+  "E501",   # Long lines
+  "EXE",    # flake8-executable
+  "F",      # Pyflakes
+  "FURB",   # refurb
+  "INT",    # flake8-gettext
+  "PERF",   # Perflint
+  "PL",     # Pylint
+  "Q",      # flake8-quotes
+  "SIM",    # flake8-simplify
+  "SLOT",   # flake8-slots
+  "T10",    # flake8-debugger
+  "W",      # pycodestyle
+  "YTT",    # flake8-2020
+  # "E",    # pycodestyle
+  # "NPY",  # NumPy-specific rules
+  # "PD",   # pandas-vet
+  # "PT",   # flake8-pytest-style
+  # "UP",   # pyupgrade
+]
+line-length = 1486
+target-version = "py38"
+ignore = [
+  "F401",     # unused-import
+  "PERF203",	# `try`-`except` within a loop incurs performance overhead
+  "PERF401",	# Use a list comprehension to create a transformed list
+  "PLR1714",  # repeated-equality-comparison
+  "PLR5501",  # collapsible-else-if
+  "PLW0603",  # global-statement
+  "PLW1510",  # subprocess-run-without-check
+  "PLW2901",  # redefined-loop-name
+  "SIM108",   # if-else-block-instead-of-if-exp
+  "SIM115",   # open-file-with-context-handler
+  "SIM118",   # in-dict-keys
+]
+
+[tool.ruff.mccabe]
+max-complexity = 28
+
+[tool.ruff.per-file-ignores]
+"examples/basic_qa_pipeline.py" = ["C416"]
+"haystack/preview/testing/document_store.py" = ["C416", "F821"]
+"haystack/telemetry.py" = ["F821"]
+
+[tool.ruff.pylint]
+allow-magic-value-types = ["float", "int", "str"]
+max-args = 38  # Default is 5
+max-branches = 32  # Default is 12
+max-public-methods = 90  # Default is 20
+max-returns = 9  # Default is 6
+max-statements = 105  # Default is 50
+
+[tool.coverage.run]
+omit = [
+    "haystack/testing/*",
+]
