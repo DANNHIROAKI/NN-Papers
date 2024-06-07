@@ -1,0 +1,12 @@
+transformers==4.30.0
+torch>=1.10.0
+timm==0.4.12
+pytorch_lightning==1.6.5
+pdf2image==1.16.0
+setuptools==65.5.1
+sentencepiece
+pandas
+jsonlines
+catalyst
+product_key_memory
+datasets
