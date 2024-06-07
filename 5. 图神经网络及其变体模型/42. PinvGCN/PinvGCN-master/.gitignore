@@ -1,0 +1,6 @@
+*.pkl
+*.mat
+*.pyo
+*.pyc
+__pycache__/
+build/
