@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automatic Controllable Colorization via Imagination</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Automatic Controllable Colorization via Imagination</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://xy-cong.github.io/">Xiaoyan Cong</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://yuewuhkust.github.io/">Yue Wu</a><sup>4</sup>,</span>
+            <span class="author-block">
+              <a href="https://cqf.io/">Qifeng Chen</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://chenyanglei.github.io/">Chenyang Lei</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>CAIR, HKISI-CAS,</span>
+            <span class="author-block"><sup>2</sup>HKUST,</span>
+            <span class="author-block"><sup>3</sup>Zhejiang University,</span>
+            <span class="author-block"><sup>4</sup>Huawei Noah's Ark Lab</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://xy-cong.github.io/imagine-colorization/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://xy-cong.github.io/imagine-colorization/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://xy-cong.github.io/imagine-colorization/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/xy-cong/imagine-colorization"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./images/framework.png"
+      class="interpolation-image"
+      alt="Interpolation end reference image."/>
+      <h2 class="subtitle has-text-centered">
+        Given a black-and-white input, our framework first synthesizes a semantically similar, 
+        spatially aligned, and instance-aware reference by mimicking the imagination process of human experts. 
+        Then the colorization module colorizes the black-and-white image with the guidance of reference. 
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose a framework for automatic colorization that allows for 
+            iterative editing and modifications. 
+            The core of our framework lies in an imagination module: 
+            by understanding the content within a grayscale image, 
+            we utilize a pre-trained image generation model to generate multiple images 
+            that contain the same content. 
+            These images serve as references for coloring, 
+            mimicking the process of human experts. 
+            As the synthesized images can be imperfect or different from the original grayscale image, 
+            we propose a Reference Refinement Module to select the optimal reference composition. 
+            Unlike most previous end-to-end automatic colorization algorithms, 
+            our framework allows for iterative and localized modifications of the colorization results 
+            because we explicitly model the coloring samples. 
+            Extensive experiments demonstrate the superiority of 
+            our framework over existing automatic colorization algorithms in editability and flexibility.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+    <!--/ Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <img src="./images/Imagine.png"
+        class="interpolation-image"
+        alt="Interpolation end reference image."/>
+        <h2 class="subtitle has-text-centered">      
+        </h2>
+      </div>
+    </div>
+    <!-- TL;DR -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">TL;DR</h2>
+        <div class="content has-text-justified">
+          <ul style="list-style-type: disc;">
+            <li>We propose a novel automatic colorization framework that 
+              leverages the pre-trained diffusion models. We introduce 
+              an imagination module that emulates human experts to 
+              synthesize semantically similar, structurally aligned, and 
+              instance-aware colorful references, with potential applications beyond colorization. </li>
+            <li>We demonstrate our novel automatic colorization framework exhibits remarkable controllable and user-interactive 
+              capabilities. We can also present diverse colorization results. </li>
+            <li>Compared to previous automatic colorization methods, our framework achieves state-of-the-art performance and generalization. </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diverse Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Diverse Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            We can synthesize diverse colorful references from Imagination Module, yielding diverse colorzation results.
+          </p>
+          <img src="./images/Diverse.png" alt="Diverse Colorization" style="height:100%;">
+        </div>
+      </div>
+    </div>
+
+    <!-- User Interaction & Editability Effects. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">User Interaction & Editability</h2>
+        <div class="content has-text-justified">
+          <p>
+            The top panel of (a) shows the black-and-white input, the reference, the colorization result, and the area 
+            marked by the user's mouse click indicating dissatisfaction with the colorization. 
+            The bottom panel of (a) displays multiple reference candidates generated by our Imagination Module. 
+            (b) Users select a preferred segment from the reference candidates to replace the unsatisfactory part of the reference, 
+            consisting of a new reference. (c) The colorization result after the adjustment.
+          </p>
+          <img src="./images/user_interactive.jpg" alt="User Interaction & Editability Effects." style="height:100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Colorization Gallery</h2>
+
+        <!-- Interpolating. -->
+        <div class="content has-text-justified">
+          <p>
+            Comparison with the state-of-the-art automatic colorization methods on the COCO-Stuff vaidation dataset. 
+            Our method can generate more natural and photo-realistic colors. Please zoom in for the best view.
+          </p>
+        </div>
+        <img src="./images/COCO_compare.png"
+             class="interpolation-image"
+             alt="COCO-Stuff comparison."/>
+        <br/>
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <div class="content has-text-justified">
+          <p>
+            Comparison with the state-of-the-art automatic colorization methods on the in-the-wild vaidation dataset which was collected randomly on the Internet. 
+            Our method can generate more natural and photo-realistic colors. Please zoom in for the best view.
+          </p>
+        </div>
+        <img src="./images/In-the-wild_compare.png"
+             class="interpolation-image"
+             alt="COCO-Stuff comparison."/>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{cong2024imaginecolorization,
+  author    = {Cong, Xiaoyan and Wu, Yue and Chen, Qifeng and Lei, Chenyang},
+  title     = {Automatic Controllable Colorization via Imagination},
+  journal   = {CVPR},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website source code based on the <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> page. We thank the authors for sharing their source code.
+            If you want to reuse their source code, please credit them appropriately.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
