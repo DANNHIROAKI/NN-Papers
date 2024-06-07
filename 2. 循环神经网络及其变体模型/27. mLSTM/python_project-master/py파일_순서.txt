@@ -1,0 +1,3 @@
+get_url.py -> get_content.py -> data_normalize.py -> extract_nouns.py -> get_TFIDF_top20.py -> generate_word_dict.py  
+-> generator_train_model.py ->
+-> generate_pikle_for_category_classification.py -> category_classification.py -> generator_test_model.py -> word_to_index_and_padding.py -> test.py -> execute.py

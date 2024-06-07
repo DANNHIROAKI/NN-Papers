@@ -1,0 +1,2 @@
+model_checkpoint_path: "in_accident_lst3_256"
+all_model_checkpoint_paths: "in_accident_lst3_256"

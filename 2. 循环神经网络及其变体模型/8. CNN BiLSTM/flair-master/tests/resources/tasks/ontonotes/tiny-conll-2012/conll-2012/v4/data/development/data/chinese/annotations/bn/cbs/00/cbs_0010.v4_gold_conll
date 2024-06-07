@@ -1,0 +1,212 @@
+#begin document (bn/cbs/00/cbs_0010); part 000
+bn/cbs/00/cbs_0010   0    0         俄罗斯    NR      (TOP(IP(NP(NP*   -    -   -   -        (ORG*       (ARG0*            *      *        *             *     (6|(8
+bn/cbs/00/cbs_0010   0    1          航空    NN                   *   -    -   -   -            *            *            *      *        *             *         -
+bn/cbs/00/cbs_0010   0    2          公司    NN                   *)  -    -   -   -            *)           *            *      *        *             *         6)
+bn/cbs/00/cbs_0010   0    3           一    CD                (QP*   -    -   -   -   (QUANTITY*            *            *      *        *             *         -
+bn/cbs/00/cbs_0010   0    4           名     M              (CLP*))  -    -   -   -            *)           *            *      *        *             *         -
+bn/cbs/00/cbs_0010   0    5          官员    NN               (NP*))  -    -   -   -            *            *)           *      *        *             *         8)
+bn/cbs/00/cbs_0010   0    6           在     P             (VP(PP*   -    -   2   -            *   (ARGM-TMP*            *      *        *             *         -
+bn/cbs/00/cbs_0010   0    7          ９号    NT               (NP*))  -    -   -   -        (DATE)           *)           *      *        *             *        (9)
+bn/cbs/00/cbs_0010   0    8           说    VV                (VP*   -   01   7   -            *          (V*)           *      *        *             *         -
+bn/cbs/00/cbs_0010   0    9           ，    PU                   *   -    -   -   -            *            *            *      *        *             *         -
+bn/cbs/00/cbs_0010   0   10       米洛舍维奇    NR   (IP(NP(NP(DNP(NP*)  -    -   -   -      (PERSON)      (ARG1*       (ARG0*      *   (ARG0*        (ARG0*     (3|(4)
+bn/cbs/00/cbs_0010   0   11           的   DEG                   *)  -    -   -   -            *            *            *      *        *             *         -
+bn/cbs/00/cbs_0010   0   12          儿子    NN               (NP*))  -    -   -   -            *            *            *      *        *             *         -
+bn/cbs/00/cbs_0010   0   13    马可·米洛舍维奇    NR               (NP*))  -    -   -   -      (PERSON)           *            *)     *        *)            *)        3)
+bn/cbs/00/cbs_0010   0   14          ９号    NT          (VP(VP(NP*   -    -   -   -      (PERSON)           *   (ARGM-TMP*      *        *             *         -
+bn/cbs/00/cbs_0010   0   15          早上    NT                   *)  -    -   -   -        (TIME)           *            *)     *        *             *         -
+bn/cbs/00/cbs_0010   0   16           持    VV                (VP*   -   01   -   -            *            *          (V*)     *        *             *         -
+bn/cbs/00/cbs_0010   0   17          外交    NN                (NP*   -    -   -   -            *            *       (ARG1*      *        *             *        (0
+bn/cbs/00/cbs_0010   0   18          护照    NN                 *)))  -    -   -   -            *            *            *)     *        *             *         0)
+bn/cbs/00/cbs_0010   0   19           从     P             (VP(PP*   -    -   -   -            *            *            *      *   (ARG2*             *         -
+bn/cbs/00/cbs_0010   0   20          俄国    NR          (NP(NP(NP*)  -    -   -   -         (GPE)           *            *      *        *             *    (10|(2)
+bn/cbs/00/cbs_0010   0   21          首都    NN               (NP*))  -    -   -   -            *            *            *      *        *             *         -
+bn/cbs/00/cbs_0010   0   22         莫斯科    NR              (NP*)))  -    -   -   -         (GPE)           *            *      *        *)            *        10)
+bn/cbs/00/cbs_0010   0   23          搭机    VV            (VP(VSB*   -   01   -   -            *            *            *    (V*)       *             *         -
+bn/cbs/00/cbs_0010   0   24          飞往    VV                   *)  -   01   -   -            *            *            *      *      (V*)            *         -
+bn/cbs/00/cbs_0010   0   25          中国    NR             (NP(NP*)  -    -   -   -         (GPE)           *            *      *   (ARG1*             *       (11
+bn/cbs/00/cbs_0010   0   26          大陆    NN                (NP*)  -    -   -   -         (GPE)           *            *      *        *             *         -
+bn/cbs/00/cbs_0010   0   27          北京    NR             (NP*))))  -    -   -   -         (GPE)           *            *      *        *)            *        11)
+bn/cbs/00/cbs_0010   0   28           ，    PU                   *   -    -   -   -            *            *            *      *        *             *         -
+bn/cbs/00/cbs_0010   0   29          可是    AD           (VP(ADVP*)  -    -   -   -            *            *            *      *        *    (ARGM-DIS*)        -
+bn/cbs/00/cbs_0010   0   30           就    AD           (PP(ADVP*)  -    -   8   -            *            *            *      *        *    (ARGM-TMP*         -
+bn/cbs/00/cbs_0010   0   31           在     P                (PP*   -    -   2   -            *            *            *      *        *             *         -
+bn/cbs/00/cbs_0010   0   32          稍后    NN              (NP*)))  -    -   -   -            *            *            *      *        *             *)        -
+bn/cbs/00/cbs_0010   0   33           就    AD              (ADVP*)  -    -   2   -            *            *            *      *        *    (ARGM-ADV*)        -
+bn/cbs/00/cbs_0010   0   34          返回    VV                (VP*   -   01   -   -            *            *            *      *        *           (V*)        -
+bn/cbs/00/cbs_0010   0   35         莫斯科    NR          (NP*)))))))  -    -   -   -         (GPE)           *)           *      *        *        (ARG1*)      (10)
+bn/cbs/00/cbs_0010   0   36           。    PU                  *))  -    -   -   -            *            *            *      *        *             *         -
+
+bn/cbs/00/cbs_0010   0    0      这    DT  (TOP(IP(NP(DP*   -    -   -   -          *   (ARG0*      *            *     (8
+bn/cbs/00/cbs_0010   0    1      名     M          (CLP*))  -    -   -   -          *        *      *            *      -
+bn/cbs/00/cbs_0010   0    2     俄国    NR            (NP*)  -    -   -   -      (ORG*        *      *            *     (2)
+bn/cbs/00/cbs_0010   0    3     航空    NN            (NP*   -    -   -   -          *        *      *            *     (6
+bn/cbs/00/cbs_0010   0    4     公司    NN               *)  -    -   -   -          *)       *      *            *      6)
+bn/cbs/00/cbs_0010   0    5     官员    NN           (NP*))  -    -   -   -          *        *)     *            *      8)
+bn/cbs/00/cbs_0010   0    6      说    VV            (VP*   -   01   7   -          *      (V*)     *            *      -
+bn/cbs/00/cbs_0010   0    7     马可    NR         (IP(NP*)  -    -   -   -    (PERSON)  (ARG1*      *       (ARG1*)    (3)
+bn/cbs/00/cbs_0010   0    8      是    VC            (VP*   -   01   2   -          *        *    (V*)           *      -
+bn/cbs/00/cbs_0010   0    9     因为     P         (VP(PP*   -    -   -   -          *        *      *   (ARGM-PRP*      -
+bn/cbs/00/cbs_0010   0   10     护照    NN            (NP*   -    -   -   -          *        *      *            *      -
+bn/cbs/00/cbs_0010   0   11     问题    NN              *))  -    -   -   -          *        *      *            *)     -
+bn/cbs/00/cbs_0010   0   12      而   MSP            (VP*   -    -   -   -          *        *      *            *      -
+bn/cbs/00/cbs_0010   0   13      在     P         (VP(PP*   -    -   2   -          *        *      *   (ARGM-LOC*      -
+bn/cbs/00/cbs_0010   0   14     北京    NR            (NP*   -    -   -   -      (FAC*        *      *            *    (13
+bn/cbs/00/cbs_0010   0   15     机场    NN              *))  -    -   -   -          *)       *      *            *)    13)
+bn/cbs/00/cbs_0010   0   16      被    LB            (VP*   -    -   -   -          *        *      *            *      -
+bn/cbs/00/cbs_0010   0   17     中共    NR         (IP(NP*)  -    -   -   -       (ORG)       *      *       (ARG0*)    (7)
+bn/cbs/00/cbs_0010   0   18     遣返    VV            (VP*   -   01   -   -          *        *      *          (V*)     -
+bn/cbs/00/cbs_0010   0   19    莫斯科    NR   (NP*))))))))))  -    -   -   -       (GPE)       *)     *       (ARG2*)   (10)
+bn/cbs/00/cbs_0010   0   20      。    PU              *))  -    -   -   -          *        *      *            *      -
+
+bn/cbs/00/cbs_0010   0    0       北京    NR  (TOP(IP(IP(NP(DNP(NP(NP*   -    -   -   -      (FAC*        (ARG0*         *        *            *         *      *             *   (12|(13
+bn/cbs/00/cbs_0010   0    1       机场    NN                         *)  -    -   -   -          *)            *         *        *            *         *      *             *        13)
+bn/cbs/00/cbs_0010   0    2       方面    NN                     (NP*))  -    -   -   -          *             *         *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0    3        的   DEG                         *)  -    -   -   -          *             *         *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0    4        这    DT                      (DP*   -    -   -   -          *             *         *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0    5        项     M                    (CLP*))  -    -   -   -          *             *         *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0    6       举动    NN                     (NP*))  -    -   -   -          *             *)        *        *            *         *      *             *        12)
+bn/cbs/00/cbs_0010   0    7       清楚    AD                 (VP(ADVP*)  -    -   1   -          *    (ARGM-ADV*)        *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0    8       显示    VV                      (VP*   -   01   1   -          *           (V*)        *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0    9       中共    NR                   (IP(NP*)  -    -   -   -       (ORG)       (ARG1*    (ARG0*)       *            *         *      *             *        (7)
+bn/cbs/00/cbs_0010   0   10       有意    VV                      (VP*   -   01   -   -          *             *       (V*)       *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0   11       放弃    VV                   (IP(VP*   -   01   -   -          *             *    (ARG1*      (V*)           *         *      *             *         -
+bn/cbs/00/cbs_0010   0   12        在     P       (NP(CP(CP(IP(VP(PP*   -    -   2   -          *             *         *   (ARG1*            *         *      *             *        (4
+bn/cbs/00/cbs_0010   0   13       总统    NN                      (NP*   -    -   -   -          *             *         *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0   14       大选    NN                        *))  -    -   -   -          *             *         *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0   15       落败    VV                    (VP*)))  -    -   -   -          *             *         *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0   16        的   DEC                        *))  -    -   -   -          *             *         *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0   17        前    JJ                 (NP(ADJP*)  -    -   -   -          *             *         *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0   18     南斯拉夫    NR                      (NP*)  -    -   -   -       (GPE)            *         *        *            *         *      *             *        (1)
+bn/cbs/00/cbs_0010   0   19       总统    NN                     (NP*))  -    -   -   -          *             *         *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0   20    米洛舍维奇    NR              (NP*)))))))))  -    -   -   -    (PERSON)            *)        *)       *)           *         *      *             *         4)
+bn/cbs/00/cbs_0010   0   21        ，    PU                         *   -    -   -   -          *             *         *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0   22       因此    AD                 (IP(ADVP*)  -    -   -   -          *             *         *        *            *         *      *    (ARGM-DIS*)        -
+bn/cbs/00/cbs_0010   0   23        他    PN                (NP(NP(NP*)  -    -   -   -          *             *         *        *            *         *      *        (ARG1*     (3|(4)
+bn/cbs/00/cbs_0010   0   24        在     P          (CP(CP(IP(VP(PP*   -    -   2   -          *             *         *        *   (ARGM-LOC*         *      *             *         -
+bn/cbs/00/cbs_0010   0   25     南斯拉夫    NR                     (NP*))  -    -   -   -       (GPE)            *         *        *            *)        *      *             *        (1)
+bn/cbs/00/cbs_0010   0   26       受到    VV                      (VP*   -   02   1   -          *             *         *        *          (V*)        *      *             *         -
+bn/cbs/00/cbs_0010   0   27       民众    NN                   (IP(NP*)  -    -   -   -          *             *         *        *       (ARG2*    (ARG0*)     *             *         -
+bn/cbs/00/cbs_0010   0   28       厌恶    VV                  (VP*)))))  -   01   -   -          *             *         *        *            *)      (V*)     *             *         -
+bn/cbs/00/cbs_0010   0   29        的   DEC                        *))  -    -   -   -          *             *         *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0   30       儿子    NN                     (NP*))  -    -   -   -          *             *         *        *       (ARG0*)        *      *             *         -
+bn/cbs/00/cbs_0010   0   31       马可    NR                     (NP*))  -    -   -   -    (PERSON)            *         *        *            *         *      *             *)        3)
+bn/cbs/00/cbs_0010   0   32        才    AD                 (VP(ADVP*)  -    -   -   -          *             *         *        *            *         *      *    (ARGM-ADV*)        -
+bn/cbs/00/cbs_0010   0   33        会    VV                      (VP*   -   01   -   -          *             *         *        *            *         *    (V*)            *         -
+bn/cbs/00/cbs_0010   0   34        在     P                   (VP(PP*   -    -   2   -          *             *         *        *            *         *      *    (ARGM-LOC*         -
+bn/cbs/00/cbs_0010   0   35       北京    NR                      (NP*   -    -   -   -      (FAC*             *         *        *            *         *      *             *       (13
+bn/cbs/00/cbs_0010   0   36       机场    NN                        *))  -    -   -   -          *)            *         *        *            *         *      *             *)       13)
+bn/cbs/00/cbs_0010   0   37        被    LB                      (VP*   -    -   -   -          *             *         *        *            *         *      *             *         -
+bn/cbs/00/cbs_0010   0   38       中共    NR                (IP(NP(NP*)  -    -   -   -       (ORG)            *         *        *            *         *      *        (ARG0*     (5|(7)
+bn/cbs/00/cbs_0010   0   39       当局    NN                     (NP*))  -    -   -   -          *             *         *        *            *         *      *             *)        5)
+bn/cbs/00/cbs_0010   0   40       送回    VV                      (VP*   -   01   -   -          *             *         *        *            *         *      *           (V*)        -
+bn/cbs/00/cbs_0010   0   41      莫斯科    NR               (NP*))))))))  -    -   -   -       (GPE)            *         *        *            *         *      *        (ARG2*)      (10)
+bn/cbs/00/cbs_0010   0   42        。    PU                        *))  -    -   -   -          *             *         *        *            *         *      *             *         -
+
+bn/cbs/00/cbs_0010   0    0     马可   NR   (TOP(IP(NP*)  -    -   -   -    (PERSON)   (ARG0*)     *        (ARG0*)       (ARG0*)      (ARG0*)   (ARG0*)    (3)
+bn/cbs/00/cbs_0010   0    1      持   VV       (VP(VP*   -   01   -   -          *       (V*)     *             *             *            *         *      -
+bn/cbs/00/cbs_0010   0    2     外交   NN          (NP*   -    -   -   -          *    (ARG1*      *             *             *            *         *     (0
+bn/cbs/00/cbs_0010   0    3     护照   NN            *))  -    -   -   -          *         *)     *             *             *            *         *      0)
+bn/cbs/00/cbs_0010   0    4     能够   VV          (VP*   -    -   -   -          *         *      *             *             *            *         *      -
+bn/cbs/00/cbs_0010   0    5     顺利   AD     (VP(ADVP*)  -    -   -   -          *         *      *    (ARGM-ADV*)            *            *         *      -
+bn/cbs/00/cbs_0010   0    6     搭机   VV      (VP(VSB*   -   01   -   -          *         *    (V*)            *             *            *         *      -
+bn/cbs/00/cbs_0010   0    7     离开   VV             *)  -   01   -   -          *         *      *           (V*)            *            *         *      -
+bn/cbs/00/cbs_0010   0    8    莫斯科   NR       (NP*))))  -    -   -   -       (GPE)        *      *        (ARG1*)            *            *         *    (10)
+bn/cbs/00/cbs_0010   0    9      ，   PU             *   -    -   -   -          *         *      *             *             *            *         *      -
+bn/cbs/00/cbs_0010   0   10     但是   AD     (VP(ADVP*)  -    -   -   -          *         *      *             *    (ARGM-DIS*)           *         *      -
+bn/cbs/00/cbs_0010   0   11      却   AD        (ADVP*)  -    -   -   -          *         *      *             *    (ARGM-DIS*)           *         *      -
+bn/cbs/00/cbs_0010   0   12      在    P          (PP*   -    -   2   -          *         *      *             *    (ARGM-LOC*            *         *      -
+bn/cbs/00/cbs_0010   0   13     北京   NR         (NP*))  -    -   -   -       (GPE)        *      *             *             *)           *         *    (11)
+bn/cbs/00/cbs_0010   0   14     受阻   VV         (VP*))  -   01   -   -          *         *      *             *           (V*)           *         *      -
+bn/cbs/00/cbs_0010   0   15      ，   PU             *   -    -   -   -          *         *      *             *             *            *         *      -
+bn/cbs/00/cbs_0010   0   16      可   VV          (VP*   -   01   5   -          *         *      *             *             *          (V*)        *      -
+bn/cbs/00/cbs_0010   0   17     算是   VV          (VP*   -   01   -   -          *         *      *             *             *   (ARGM-ADV*       (V*)     -
+bn/cbs/00/cbs_0010   0   18     踢到   VV       (IP(VP*   -    -   -   -          *         *      *             *             *            *    (ARG1*      -
+bn/cbs/00/cbs_0010   0   19      了   AS             *   -    -   -   -          *         *      *             *             *            *         *      -
+bn/cbs/00/cbs_0010   0   20     铁板   NN     (NP*))))))  -    -   -   -          *         *      *             *             *            *)        *)     -
+bn/cbs/00/cbs_0010   0   21      。   PU            *))  -    -   -   -          *         *      *             *             *            *         *      -
+
+bn/cbs/00/cbs_0010   0    0       可是    AD        (TOP(IP(IP(ADVP*)  -    -   -   -          *        *        *    (ARGM-ADV*)            *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0    1        这    DT                 (NP(DP*   -    -   -   -          *        *        *        (ARG0*             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0    2        项     M                  (CLP*))  -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0    3       消息    NN                   (NP*))  -    -   -   -          *        *        *             *)            *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0    4        和     P                 (VP(PP*   -    -   -   -          *        *        *    (ARGM-ADV*             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0    5       先前    AD               (IP(ADVP*)  -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0    6       外界    NN                    (NP*)  -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0    7       谣传    VV                    (VP*   -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0    8       中共    NR              (IP(NP(NP*)  -    -   -   -       (ORG)  (ARG0*        *             *             *             *             *         *      *             *    (5|(7)
+bn/cbs/00/cbs_0010   0    9       当局    NN                   (NP*))  -    -   -   -          *        *)       *             *             *             *             *         *      *             *        5)
+bn/cbs/00/cbs_0010   0   10       准备    VV                    (VP*   -   02   2   -          *      (V*)       *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   11       提供    VV                 (IP(VP*   -   01   -   -          *   (ARG1*      (V*)            *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   12    米洛舍维奇    NR                 (NP(NP*)  -    -   -   -    (PERSON)       *   (ARG2*             *             *             *             *         *      *             *       (4)
+bn/cbs/00/cbs_0010   0   13        和    CC                       *   -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   14        他    PN             (NP(DNP(NP*)  -    -   -   -          *        *        *             *             *             *             *         *      *             *       (4)
+bn/cbs/00/cbs_0010   0   15        的   DEG                       *)  -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   16       家人    NN                  (NP*)))  -    -   -   -          *        *        *)            *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   17       安全    JJ               (NP(ADJP*)  -    -   -   -          *        *   (ARG1*             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   18      庇护所    NN            (NP*)))))))))  -    -   -   -          *        *)       *)            *)            *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   19        有    VV                    (VP*   -   03   5   -          *        *        *           (V*)            *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   20        着    AS                       *   -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   21        很    AD   (NP(CP(CP(IP(VP(ADVP*)  -    -   -   -          *        *        *        (ARG1*    (ARGM-ADV*)            *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   22        大    VA                  (VP*)))  -   01   -   -          *        *        *             *           (V*)            *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   23        的   DEC                      *))  -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   24       出入    NN                (NP*)))))  -    -   -   -          *        *        *             *)       (ARG0*)            *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   25        ，    PU                       *   -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   26       一般    AD            (IP(VP(ADVP*)  -    -   -   -          *        *        *             *             *    (ARGM-ADV*)            *         *      *             *        -
+bn/cbs/00/cbs_0010   0   27       认为    VV                    (VP*   -   01   1   -          *        *        *             *             *           (V*)            *         *      *             *        -
+bn/cbs/00/cbs_0010   0   28        在     P  (IP(NP(CP(CP(IP(VP(PP*   -    -   2   -          *        *        *             *             *        (ARG1*    (ARGM-TMP*         *      *        (ARG0*       (7
+bn/cbs/00/cbs_0010   0   29       去年    NT        (NP(CP(CP(IP(NP*)  -    -   -   -      (DATE)       *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   30    米洛舍维奇    NR                    (NP*)  -    -   -   -    (PERSON)       *        *             *             *             *             *         *      *             *       (4)
+bn/cbs/00/cbs_0010   0   31       挥兵    VV             (VP(VP(VSB*   -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   32       攻打    VV                       *)  -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   33      科索沃    NR              (NP(NP(NP*)  -    -   -   -       (GPE)       *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   34       境内    NN                   (NP*))  -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   35    阿尔巴尼亚    NR                    (NP*)  -    -   -   -       (GPE)       *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   36        一    CD                    (QP*)  -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   37     分离主义    NN                    (NP*   -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   38       分子    NN                   *)))))  -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   39        的   DEC                      *))  -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   40       时候    NN                  (NP*)))  -    -   -   -          *        *        *             *             *             *             *)        *      *             *        -
+bn/cbs/00/cbs_0010   0   41        ，    PU                       *   -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   42       强力    AD                  (ADVP*)  -    -   -   -          *        *        *             *             *             *    (ARGM-ADV*)        *      *             *        -
+bn/cbs/00/cbs_0010   0   43       反对    VV                    (VP*   -   01   -   -          *        *        *             *             *             *           (V*)        *      *             *        -
+bn/cbs/00/cbs_0010   0   44       北约    NR                 (IP(NP*   -    -   -   -      (ORG*        *        *             *             *             *        (ARG1*    (ARG0*      *             *        -
+bn/cbs/00/cbs_0010   0   45       组织    NN                       *)  -    -   3   -          *)       *        *             *             *             *             *         *)     *             *        -
+bn/cbs/00/cbs_0010   0   46       攻击    VV                    (VP*   -   01   -   -          *        *        *             *             *             *             *       (V*)     *             *        -
+bn/cbs/00/cbs_0010   0   47     南斯拉夫    NR               (NP*))))))  -    -   -   -       (GPE)       *        *             *             *             *             *)   (ARG1*)     *             *       (1)
+bn/cbs/00/cbs_0010   0   48        的   DEC                      *))  -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   49       中共    NR                   (NP*))  -    -   -   -       (ORG)       *        *             *             *             *        (ARG0*)        *      *             *)   (7)|7)
+bn/cbs/00/cbs_0010   0   50        ，    PU                       *   -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   51        会    VV                    (VP*   -   01   -   -          *        *        *             *             *             *             *         *    (V*)            *        -
+bn/cbs/00/cbs_0010   0   52       全力    AD               (VP(ADVP*)  -    -   -   -          *        *        *             *             *             *             *         *      *    (ARGM-ADV*)       -
+bn/cbs/00/cbs_0010   0   53       保护    VV                    (VP*   -   01   -   -          *        *        *             *             *             *             *         *      *           (V*)       -
+bn/cbs/00/cbs_0010   0   54    米洛舍维奇    NR                 (NP(NP*)  -    -   -   -    (PERSON)       *        *             *             *             *             *         *      *        (ARG1*       (4)
+bn/cbs/00/cbs_0010   0   55        和    CC                       *   -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   56        他    PN             (NP(DNP(NP*)  -    -   -   -          *        *        *             *             *             *             *         *      *             *       (4)
+bn/cbs/00/cbs_0010   0   57        的   DEG                       *)  -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   58       家人    NN                    (NP*   -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   59        及    CC                       *   -    -   3   -          *        *        *             *             *             *             *         *      *             *        -
+bn/cbs/00/cbs_0010   0   60       亲信    NN              *))))))))))  -    -   -   -          *        *        *             *             *             *)            *         *      *             *)       -
+bn/cbs/00/cbs_0010   0   61        。    PU                      *))  -    -   -   -          *        *        *             *             *             *             *         *      *             *        -
+
+bn/cbs/00/cbs_0010   0    0       可是   AD   (TOP(IP(ADVP*)  -    -   -   -          *             *        *      *      *      *    (ARGM-DIS*)        -
+bn/cbs/00/cbs_0010   0    1        从    P      (IP(VP(PP*   -    -   -   -          *             *   (ARG1*      *      *      *    (ARGM-ADV*         -
+bn/cbs/00/cbs_0010   0    2       ９号   NT      (NP(IP(NP*)  -    -   -   -      (DATE)   (ARGM-TMP*)       *      *      *      *             *    (12|(9)
+bn/cbs/00/cbs_0010   0    3       马可   NR            (NP*)  -    -   -   -    (PERSON)       (ARG1*)       *      *      *      *             *        (3)
+bn/cbs/00/cbs_0010   0    4        被   SB            (VP*   -    -   -   -          *             *        *      *      *      *             *         -
+bn/cbs/00/cbs_0010   0    5       送回   VV            (VP*   -   01   -   -          *           (V*)       *      *      *      *             *         -
+bn/cbs/00/cbs_0010   0    6      莫斯科   NR         (NP*))))  -    -   -   -       (GPE)       (ARG2*)       *      *      *      *             *       (10)
+bn/cbs/00/cbs_0010   0    7        一   CD            (QP*)  -    -   -   -          *             *        *      *      *      *             *         -
+bn/cbs/00/cbs_0010   0    8        事   NN          (NP*)))  -    -   -   -          *             *        *)     *      *      *             *        12)
+bn/cbs/00/cbs_0010   0    9        看   VV        (VP(VRD*   -   01   4   -          *             *      (V*)     *      *      *             *         -
+bn/cbs/00/cbs_0010   0   10       起来   VV            *))))  -   01   -   -          *             *        *    (V*)     *      *             *)        -
+bn/cbs/00/cbs_0010   0   11        ，   PU               *   -    -   -   -          *             *        *      *      *      *             *         -
+bn/cbs/00/cbs_0010   0   12       中共   NR            (NP*)  -    -   -   -       (ORG)            *        *      *      *      *        (ARG0*)       (7)
+bn/cbs/00/cbs_0010   0   13        很   AD       (VP(ADVP*)  -    -   -   -          *             *        *      *      *      *    (ARGM-ADV*)        -
+bn/cbs/00/cbs_0010   0   14       可能   VV            (VP*   -   01   -   -          *             *        *      *    (V*)     *             *         -
+bn/cbs/00/cbs_0010   0   15        会   VV            (VP*   -   01   -   -          *             *        *      *      *    (V*)            *         -
+bn/cbs/00/cbs_0010   0   16       放弃   VV            (VP*   -   01   -   -          *             *        *      *      *      *           (V*)        -
+bn/cbs/00/cbs_0010   0   17    米洛舍维奇   NR        (NP*)))))  -    -   -   -    (PERSON)            *        *      *      *      *        (ARG1*)       (4)
+bn/cbs/00/cbs_0010   0   18        。   PU              *))  -    -   -   -          *             *        *      *      *      *             *         -
+
+#end document
