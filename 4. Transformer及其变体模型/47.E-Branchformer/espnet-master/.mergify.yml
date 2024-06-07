@@ -1,0 +1,123 @@
+pull_request_rules:
+  - name: automatic merge if label=auto-merge
+    conditions:
+      - "label=auto-merge"
+      - "check-success=unit_test_espnet1_and_espnet2_on_centos7"
+      - "check-success=unit_test_espnet1_and_espnet2_on_debian11"
+      - "check-success=check_installable_on_windows (3.10, 2.1.0)"
+      - "check-success=check_installable_on_macos (3.10, 2.1.0, true)"
+      - "check-success=check_installable_on_macos (3.10, 2.1.0, false)"
+      - "check-success=unit_test_espnet1_and_integration_test_espnet1 (ubuntu-latest, 3.7, 1.13.1, false, 6.0.0)"
+      - "check-success=unit_test_espnet1_and_integration_test_espnet1 (ubuntu-latest, 3.10, 2.1.0, 6.0.0, false)"
+      - "check-success=unit_test_espnet2_and_integration_test_espnet2 (ubuntu-latest, 3.7, 1.12.1, false, 6.0.0)"
+      - "check-success=unit_test_espnet2_and_integration_test_espnet2 (ubuntu-latest, 3.7, 1.13.1, false, 6.0.0)"
+      - "check-success=unit_test_espnet2_and_integration_test_espnet2 (ubuntu-latest, 3.8, 2.0.1, 6.0.0, false)"
+      - "check-success=unit_test_espnet2_and_integration_test_espnet2 (ubuntu-latest, 3.9, 2.0.1, 6.0.0, false)"
+      - "check-success=unit_test_espnet2_and_integration_test_espnet2 (ubuntu-latest, 3.10, 2.0.1, 6.0.0, false)"
+      - "check-success=unit_test_espnet2_and_integration_test_espnet2 (ubuntu-latest, 3.8, 2.1.0, 6.0.0, false)"
+      - "check-success=unit_test_espnet2_and_integration_test_espnet2 (ubuntu-latest, 3.9, 2.1.0, 6.0.0, false)"
+      - "check-success=unit_test_espnet2_and_integration_test_espnet2 (ubuntu-latest, 3.10, 2.1.0, 6.0.0, false)"
+      - "check-success=test_configuration_espnet2 (ubuntu-latest, 3.7, 1.13.1, 6.0.0, false)"
+      - "check-success=test_configuration_espnet2 (ubuntu-latest, 3.10, 2.1.0, false, 6.0.0)"
+      - "check-success=test_import (ubuntu-latest, 3.10, 2.1.0)"
+      - "check-success=check_kaldi_symlinks"
+    actions:
+      merge:
+        method: merge
+  - name: delete head branch after merged
+    conditions:
+      - merged
+    actions:
+      delete_head_branch: {}
+  - name: "add label=auto-merge for PR by mergify"
+    conditions:
+      - author=mergify[bot]
+    actions:
+      label:
+        add: ["auto-merge"]
+  - name: warn on conflicts
+    conditions:
+      - conflict
+    actions:
+      comment:
+        message: This pull request is now in conflict :(
+      label:
+        add: ["conflicts"]
+  - name: unlabel conflicts
+    conditions:
+      - -conflict
+    actions:
+      label:
+        remove: ["conflicts"]
+  - name: "auto add label=ESPnet1"
+    conditions:
+      - files~=^(espnet/|egs/)
+    actions:
+      label:
+        add: ["ESPnet1"]
+  - name: "auto add label=ESPnet2"
+    conditions:
+      - files~=^(espnet2/|egs2/)
+    actions:
+      label:
+        add: ["ESPnet2"]
+  - name: "auto add label=ASR"
+    conditions:
+      - files~=^(espnet*/asr|egs*/*/asr1)
+    actions:
+      label:
+        add: ["ASR"]
+  - name: "auto add label=TTS"
+    conditions:
+      - files~=^(espnet*/tts|egs*/*/tts1)
+    actions:
+      label:
+        add: ["TTS"]
+  - name: "auto add label=MT"
+    conditions:
+      - files~=^(espnet*/mt|egs*/*/mt1)
+    actions:
+      label:
+        add: ["MT"]
+  - name: "auto add label=LM"
+    conditions:
+      - files~=^(espnet*/lm)
+    actions:
+      label:
+        add: ["LM"]
+  - name: "auto add label=README"
+    conditions:
+      - files~=README.md
+    actions:
+      label:
+        add: ["README"]
+  - name: "auto add label=Documentation"
+    conditions:
+      - files~=^doc/
+    actions:
+      label:
+        add: ["Documentation"]
+  - name: "auto add label=CI"
+    conditions:
+      - files~=^(ci/|.github/)
+    actions:
+      label:
+        add: ["CI"]
+  - name: "auto add label=Installation"
+    conditions:
+      - files~=^(tools/|setup.py)
+    actions:
+      label:
+        add: ["Installation"]
+  - name: "auto add label=mergify"
+    conditions:
+      - files~=^.mergify.yml
+    actions:
+      label:
+        add: ["mergify"]
+  - name: "auto add label=Docker"
+    conditions:
+      - files~=^docker/
+    actions:
+      label:
+        add: ["Docker"]

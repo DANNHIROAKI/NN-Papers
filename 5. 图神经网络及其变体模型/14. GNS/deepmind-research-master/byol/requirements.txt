@@ -1,0 +1,9 @@
+dm-acme
+dm-haiku
+dm-tree
+jax
+jaxlib
+numpy>=1.16
+optax
+tensorflow
+tensorflow_datasets
