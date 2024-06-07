@@ -1,0 +1,19 @@
+#common
+**/*.DS_Store
+**/*.ipynb_checkpoints/
+**/__pycache__
+out/
+
+gmail.py
+
+#SBM datasets
+data/SBMs/*.pkl
+
+#ZINC dataset
+data/molecules/*.pkl
+data/molecules/*.pickle
+data/molecules/*.zip
+data/molecules/zinc-full/*.pkl
+
+dataset/
+
