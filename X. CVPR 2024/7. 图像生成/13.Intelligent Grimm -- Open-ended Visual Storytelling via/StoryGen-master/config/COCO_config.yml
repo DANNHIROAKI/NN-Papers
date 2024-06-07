@@ -1,0 +1,22 @@
+pretrained_model_path: "./ckpt/stable-diffusion-v1-5/"
+logdir: "./COCO_log/"
+validation_sample_logger:
+    num_inference_steps: 40
+    guidance_scale: 7
+gradient_accumulation_steps: 8
+train_steps: 50000
+train_batch_size: 12
+validation_steps: 500
+checkpointing_steps: 5000
+seed: 6666
+mixed_precision: 'fp16'
+learning_rate: 1e-5
+scale_lr: false
+lr_scheduler: constant
+lr_warmup_steps: 0
+use_8bit_adam: true
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_weight_decay: 0.01
+adam_epsilon: 1.0e-08
+max_grad_norm: 1.0
