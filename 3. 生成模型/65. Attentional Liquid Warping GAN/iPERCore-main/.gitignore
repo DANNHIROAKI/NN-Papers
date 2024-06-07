@@ -1,0 +1,15 @@
+*.idea
+*.pyc
+iPERCore.egg-info/
+assets/checkpoints/
+assets/executables/
+assets/pretrains/
+assets/checkpoints.zip
+assets/executables.zip
+results/
+snapshots/
+*venv
+*.pytest
+*debug*
+visuals/
+scripts/evaluate/
