@@ -1,0 +1,50 @@
+env:
+  python_bin: "python" # Path to the python bin
+  base_project_dir: ${hydra:runtime.cwd}
+  before_train_commands: []
+  torch_extensions_dir: "~/.cache/torch_extensions"
+  data_dir: "data"
+  objects_to_copy:
+    - ${env.base_project_dir}/configs
+    - ${env.base_project_dir}/dnnlib
+    - ${env.base_project_dir}/infra
+    - ${env.base_project_dir}/metrics
+    - ${env.base_project_dir}/scripts
+    - ${env.base_project_dir}/tests
+    - ${env.base_project_dir}/torch_utils
+    - ${env.base_project_dir}/training
+    - ${env.base_project_dir}/environment.yml
+    - ${env.base_project_dir}/setup.py
+  # A list of objects that are static and too big
+  # to be copy-pasted for each experiment
+  symlinks_to_create:
+    - ${env.base_project_dir}/data
+num_gpus: 4
+print_only: false
+
+project_release_dir:
+  _target_: infra.utils.get_experiment_path
+  master_dir: ${env.base_project_dir}/experiments
+  experiment_name: ${experiment_name}
+
+train_args:
+  outdir: ${project_release_dir}
+  data: ${env.data_dir}/${dataset}.zip
+  gpus: ${num_gpus}
+  cfg: auto
+  g_fmaps: 0.5
+  d_fmaps: 0.5
+  snap: 100
+
+  # Let's by default have only x flips
+  aug: noaug
+  mirror: 1
+  z_dim: 512
+  w_dim: 512
+
+  # By default, use ALIS config
+  hydra_cfg_name: "alis.yml"
+
+train_args_str:
+  _target_: infra.utils.cfg_to_args_str
+  cfg: ${train_args}

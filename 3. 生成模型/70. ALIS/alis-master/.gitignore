@@ -1,0 +1,15 @@
+__pycache__/
+.cache/
+outputs/
+.hydra/
+launch_local.log
+submit.log
+.ipynb_checkpoints/
+models/
+notebooks/zoo.ipynb
+_cache*
+experiments/
+env/
+*.egg-info
+*.pkl
+data
