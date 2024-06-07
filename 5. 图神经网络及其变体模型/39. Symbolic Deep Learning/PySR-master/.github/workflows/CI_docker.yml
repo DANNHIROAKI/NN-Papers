@@ -1,0 +1,40 @@
+name: Docker
+
+on:
+  push:
+    branches:
+      - '**'
+    paths:
+      - 'test/**'
+      - 'pysr/**'
+      - '.github/workflows/CI_docker.yml'
+      - 'setup.py'
+      - 'Dockerfile'
+  pull_request:
+    branches:
+      - '*'
+    paths:
+      - 'test/**'
+      - 'pysr/**'
+      - '.github/workflows/CI_docker.yml'
+      - 'setup.py'
+      - 'Dockerfile'
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        arch: ['linux/amd64']
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build docker
+        run: docker build --platform=${{ matrix.arch }} -t pysr .
+      - name: Test docker
+        run: docker run --platform=${{ matrix.arch }} --rm pysr /bin/bash -c 'python3 -m pysr.test main && python3 -m pysr.test cli && python3 -m pysr.test env'
